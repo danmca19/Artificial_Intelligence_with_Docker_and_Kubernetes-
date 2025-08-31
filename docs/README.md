@@ -28,27 +28,6 @@ The AI model predicts whether a machine requires maintenance based on parameters
 - Orchestrate the solution with Kubernetes (`k8s/`).  
 - Enable **scalability** and **automatic recovery** with Kubernetes deployments.  
 
----
-
-## 📂 Project Structure
-ai_deploy_project/
-│── app/
-│ └── app.py # Streamlit application
-│── src/
-│ └── train_model.py # Model training script
-│── models/
-│ └── model.pkl # Trained machine learning model
-│── k8s/
-│ ├── deployment.yaml # Kubernetes deployment configuration
-│ └── service.yaml # Kubernetes service configuration
-│── docs/
-│ └── README.md # Technical setup instructions
-│── env/
-│ └── SETUP_VENV.md # Virtual environment setup guide
-│── requirements.txt # Project dependencies
-│── Dockerfile # Docker image configuration
-│── Makefile # Automation of common tasks
-│── README.md # Business & technical overview
 
 ---
 
