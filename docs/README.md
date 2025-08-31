@@ -1,78 +1,73 @@
-# AI Deployment Project
-# Administração de Sistema Operacional Linux com Docker e Kubernetes
 # AI Deployment Project - Docker & Kubernetes
+## 📌 Business Vision
+This project demonstrates how Artificial Intelligence (AI) can be deployed in a **scalable and resilient production environment** using **Docker and Kubernetes**.  
+The solution focuses on predictive maintenance for industrial machines, helping businesses to:
 
-Este projeto demonstra como realizar o deploy de uma aplicação de IA utilizando conteinerização (Docker) e orquestração (Kubernetes).
+- **Reduce unplanned downtime** by anticipating machine failures.  
+- **Optimize operational costs** with timely and accurate maintenance actions.  
+- **Improve decision-making** through data-driven insights.  
+- **Ensure scalability and high availability** by leveraging Kubernetes orchestration.  
 
-# Instale o Docker Desktop.
+The AI model predicts whether a machine requires maintenance based on parameters such as temperature, pressure, vibration, and noise level.
 
-# ATENÇÃO: Abra a janela do Docker Desktop e mantenha aberta para inicializar o motor de execução Docker.
+---
 
-# Instale o Kubectl na sua máquina host. Acesse o link abaixo e veja o procedimento de instalação de acordo com seu sistema operacional host:
-https://kubernetes.io/pt-br/docs/tasks/tools/
+## 🛠 Technical Stack
+- **Python 3** → model training, API & application logic  
+- **Streamlit** → user-friendly web interface  
+- **scikit-learn** → Random Forest classifier for predictive maintenance  
+- **Docker** → application and model containerization  
+- **Kubernetes (Minikube / kubectl)** → orchestration, scaling, and availability  
 
-# Valide a instalação checando a versão com o comando:
-kubectl version --client
+---
 
-# Enquanto não visualizar a versão do kubectl não adianta seguir em frente. Primeiro instale o kubectl na máquina host.
+## 🚀 Features
+- Train a machine learning model (`train_model.py`) to predict maintenance needs.  
+- Deploy the model as a **web application** with Streamlit (`app/app.py`).  
+- Containerize the application with Docker (`Dockerfile`).  
+- Orchestrate the solution with Kubernetes (`k8s/`).  
+- Enable **scalability** and **automatic recovery** with Kubernetes deployments.  
 
-# Instale o minikube
-https://minikube.sigs.k8s.io/docs/start
+---
 
-# Verifica a versão do Minikube instalada
-minikube version
+## 📂 Project Structure
+ai_deploy_project/
+│── app/
+│ └── app.py # Streamlit application
+│── src/
+│ └── train_model.py # Model training script
+│── models/
+│ └── model.pkl # Trained machine learning model
+│── k8s/
+│ ├── deployment.yaml # Kubernetes deployment configuration
+│ └── service.yaml # Kubernetes service configuration
+│── docs/
+│ └── README.md # Technical setup instructions
+│── env/
+│ └── SETUP_VENV.md # Virtual environment setup guide
+│── requirements.txt # Project dependencies
+│── Dockerfile # Docker image configuration
+│── Makefile # Automation of common tasks
+│── README.md # Business & technical overview
 
-# Enquanto não visualizar a versão do Minikube não adianta seguir em frente. Primeiro instale o Minikube na máquina host.
+---
 
-# Inicia o cluster Kubernetes local com Minikube
-minikube start
 
-# Exibe informações sobre o cluster Kubernetes atual
-kubectl cluster-info
+## 📊 Executive Summary
 
-# Cria a imagem Docker local da aplicação Streamlit
-docker build -t ai-streamlit-app:v1 .
+**Problem**: Unplanned downtime in industrial machinery leads to high costs and reduced productivity.  
 
-# Carrega a imagem Docker local diretamente no ambiente Minikube
-minikube image load ai-streamlit-app:v1
+**Solution**: This project uses AI-driven predictive maintenance to anticipate failures before they happen.  
 
-# Aplica o manifesto YAML para criar o deployment Kubernetes
-kubectl apply -f k8s/deployment.yaml 
+**Business Benefits**:
+- **Lower operational costs** through proactive maintenance.  
+- **Increased machine uptime and productivity.**  
+- **Scalable and resilient solution** using Kubernetes orchestration.  
 
-# Aplica o manifesto YAML para criar o serviço Kubernetes
-kubectl apply -f k8s/service.yaml 
+**Technology**: Python, Machine Learning, Streamlit, Docker, Kubernetes.  
 
-# Lista os pods existentes no Kubernetes e seus status
-kubectl get pods
+**Impact**: Consider a manufacturing plant operating **100 machines**, each generating an average of **$1,500 in production value per day**.  
+Unplanned downtime of just **1 day per machine** can result in **$150,000 in losses**.  
 
-# Lista os serviços ativos e mostra seus detalhes (porta, IP)
-kubectl get services
-
-# Abre automaticamente o serviço da aplicação no navegador usando Minikube
-minikube service ai-streamlit-service
-
-# Escala o deployment para rodar com 4 réplicas (pods) simultaneamente
-kubectl scale deployment ai-streamlit-deployment --replicas=4
-
-# Exibe o status atual dos pods após escalar a aplicação
-kubectl get pods
-
-# Deleta manualmente um pod específico para testar recuperação automática (pegue o nome do container a partir do comando anterior)
-kubectl delete pod ai-streamlit-deployment-7d75cd987d-wtlcv
-
-# Lista novamente os pods; o Kubernetes recriará automaticamente o pod deletado
-kubectl get pods  
-
-# Exibe informações detalhadas sobre um pod específico
-kubectl describe pod ai-streamlit-deployment-7d75cd987d-729tr
-
-# Abre um terminal interativo (bash) dentro de um pod específico
-kubectl exec -it ai-streamlit-deployment-7d75cd987d-729tr -- bash
-
-# Desligando o cluster Kubernetes
-minikube stop
-
-# Deletando o cluster
-minikube delete
-
+By reducing downtime by only **2%**, this AI-driven predictive maintenance solution could save approximately **$36,000 per month** — translating to **over $400,000 annually** in avoided costs and improved operational efficiency.  
 
