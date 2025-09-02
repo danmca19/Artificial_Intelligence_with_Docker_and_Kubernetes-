@@ -34,7 +34,7 @@ The AI model predicts whether a machine requires maintenance based on parameters
 ## 🖼 Application Preview
 Below is a preview of the **Industrial Maintenance Prediction App** built with Streamlit:  
 
-![Streamlit App Preview](streamlit_app_mock.png)
+![Streamlit App Preview](docs/images/streamlit_app_mock.png)
 
 This interface allows users to:  
 - Input **machine parameters** (temperature, pressure, vibration, noise, operating hours).  
