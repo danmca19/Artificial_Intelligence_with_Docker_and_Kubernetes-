@@ -1,14 +1,15 @@
 # AI Deployment Project - Docker & Kubernetes
+
 ## 📌 Business Vision
 This project demonstrates how Artificial Intelligence (AI) can be deployed in a **scalable and resilient production environment** using **Docker and Kubernetes**.  
-The solution focuses on predictive maintenance for industrial machines, helping businesses to:
+The solution focuses on **predictive maintenance for industrial machines**, helping businesses to:
 
 - **Reduce unplanned downtime** by anticipating machine failures.  
 - **Optimize operational costs** with timely and accurate maintenance actions.  
 - **Improve decision-making** through data-driven insights.  
 - **Ensure scalability and high availability** by leveraging Kubernetes orchestration.  
 
-The AI model predicts whether a machine requires maintenance based on parameters such as temperature, pressure, vibration, and noise level.
+The AI model predicts whether a machine requires maintenance based on parameters such as **temperature, pressure, vibration, and noise level**.
 
 ---
 
@@ -28,9 +29,20 @@ The AI model predicts whether a machine requires maintenance based on parameters
 - Orchestrate the solution with Kubernetes (`k8s/`).  
 - Enable **scalability** and **automatic recovery** with Kubernetes deployments.  
 
-
 ---
 
+## 🖼 Application Preview
+Below is a preview of the **Industrial Maintenance Prediction App** built with Streamlit:  
+
+![Streamlit App Preview](streamlit_app_mock.png)
+
+This interface allows users to:  
+- Input **machine parameters** (temperature, pressure, vibration, noise, operating hours).  
+- Instantly view whether **maintenance is required**.  
+- Explore predictions with **probability visualizations** (bar chart and gauge).  
+- Review a **summary table** of inputs and predictions for decision-making.  
+
+---
 
 ## 📊 Executive Summary
 
@@ -38,7 +50,7 @@ The AI model predicts whether a machine requires maintenance based on parameters
 
 **Solution**: This project uses AI-driven predictive maintenance to anticipate failures before they happen.  
 
-**Business Benefits**:
+**Business Benefits**:  
 - **Lower operational costs** through proactive maintenance.  
 - **Increased machine uptime and productivity.**  
 - **Scalable and resilient solution** using Kubernetes orchestration.  
@@ -49,4 +61,5 @@ The AI model predicts whether a machine requires maintenance based on parameters
 Unplanned downtime of just **1 day per machine** can result in **$150,000 in losses**.  
 
 By reducing downtime by only **2%**, this AI-driven predictive maintenance solution could save approximately **$36,000 per month** — translating to **over $400,000 annually** in avoided costs and improved operational efficiency.  
+
 
